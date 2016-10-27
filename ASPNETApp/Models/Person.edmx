@@ -27,7 +27,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ASPNETApp.Models" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Table">
+        <EntityType Name="Person">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -42,7 +42,7 @@
           <Property Name="Picture" Type="Binary" MaxLength="50" FixedLength="false" />
         </EntityType>
         <EntityContainer Name="ASPNETAppDBEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Tables" EntityType="Self.Table" />
+          <EntitySet Name="People" EntityType="ASPNETApp.Models.Person" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -50,8 +50,8 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="ASPNETAppModelsStoreContainer" CdmEntityContainer="ASPNETAppDBEntities">
-          <EntitySetMapping Name="Tables">
-            <EntityTypeMapping TypeName="ASPNETApp.Models.Table">
+          <EntitySetMapping Name="People">
+            <EntityTypeMapping TypeName="ASPNETApp.Models.Person">
               <MappingFragment StoreEntitySet="Table">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />

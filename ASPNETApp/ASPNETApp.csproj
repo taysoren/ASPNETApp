@@ -184,9 +184,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Person.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Table.cs">
-      <DependentUpon>Person.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
