@@ -175,14 +175,17 @@
       <DependentUpon>Person.Context.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Person.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>Person.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Person.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Person.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Person1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Person.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -215,7 +218,7 @@
     <Content Include="Models\Person.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Person.edmx</DependentUpon>
-      <LastGenOutput>Person.cs</LastGenOutput>
+      <LastGenOutput>Person1.cs</LastGenOutput>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ASPNETApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,12 +9,20 @@ namespace ASPNETApp.Controllers {
 	public class HomeController : Controller {
 
 		#region Data Members
-	
+		//private ASPNETAppDBEntities _db = new ASPNETAppDBEntities();
 		#endregion
+
+		public ActionResult Contact() {
+			return View();
+		}
+
+		public ActionResult About() {
+			return View();
+		}
 
 		// GET: Home
 		public ActionResult Index() {
-			return View();
+			return View();//_db.People.ToList());
 		}
 
 		// GET: Home/Details/5

@@ -25,6 +25,6 @@ namespace ASPNETApp.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Person> People { get; set; }
+        public virtual DbSet<Person> Persons { get; set; }
     }
 }

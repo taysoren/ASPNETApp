@@ -4,8 +4,8 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ASPNETApp.Models.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Table">
+      <Schema Namespace="ASPNETAppDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Persons">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -19,14 +19,14 @@
           <Property Name="Interests" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Picture" Type="varbinary" MaxLength="50" />
         </EntityType>
-        <EntityContainer Name="ASPNETAppModelsStoreContainer">
-          <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
+        <EntityContainer Name="ASPNETAppDBModelStoreContainer">
+          <EntitySet Name="Persons" EntityType="Self.Persons" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="ASPNETApp.Models" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="ASPNETAppDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Person">
           <Key>
             <PropertyRef Name="Id" />
@@ -42,17 +42,17 @@
           <Property Name="Picture" Type="Binary" MaxLength="50" FixedLength="false" />
         </EntityType>
         <EntityContainer Name="ASPNETAppDBEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="People" EntityType="ASPNETApp.Models.Person" />
+          <EntitySet Name="Persons" EntityType="Self.Person" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ASPNETAppModelsStoreContainer" CdmEntityContainer="ASPNETAppDBEntities">
-          <EntitySetMapping Name="People">
-            <EntityTypeMapping TypeName="ASPNETApp.Models.Person">
-              <MappingFragment StoreEntitySet="Table">
+        <EntityContainerMapping StorageEntityContainer="ASPNETAppDBModelStoreContainer" CdmEntityContainer="ASPNETAppDBEntities">
+          <EntitySetMapping Name="Persons">
+            <EntityTypeMapping TypeName="ASPNETAppDBModel.Person">
+              <MappingFragment StoreEntitySet="Persons">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
