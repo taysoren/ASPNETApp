@@ -9,7 +9,7 @@ namespace ASPNETApp.Controllers {
 	public class HomeController : Controller {
 
 		#region Data Members
-		//private ASPNETAppDBEntities _db = new ASPNETAppDBEntities();
+		private ASPNETAppDBEntities _db = new ASPNETAppDBEntities();
 		#endregion
 
 		public ActionResult Contact() {
@@ -22,7 +22,7 @@ namespace ASPNETApp.Controllers {
 
 		// GET: Home
 		public ActionResult Index() {
-			return View();//_db.People.ToList());
+			return View(_db.Persons.ToList());
 		}
 
 		// GET: Home/Details/5
